@@ -7,6 +7,14 @@ const posts = require('./routes/api/posts');
 const profile = require('./routes/api/profile');
 const app = express();
 
+//Passport config
+app.use(passport.initialize());
+require('./config/passport')(passport)
+
+//Body-parser config
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 //Db config
 const db = keys.mongoURI;
 mongoose
