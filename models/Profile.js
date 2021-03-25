@@ -11,19 +11,13 @@ const ProfileSchema = new Schema({
     required: true,
     max: 40
   },
-  website: {
-    type: String
-  },
   location: {
     type: String
-  },
-  status: {
-    type: String,
-    required: true
   },
   bio: {
     type: String
   },
+
   stats: {
     posts: {
       type: Number
@@ -35,6 +29,7 @@ const ProfileSchema = new Schema({
       type: Number
     }
   },
+
   social: {
     youtube: {
       type: String
