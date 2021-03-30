@@ -3,6 +3,13 @@ const passport = require('passport');
 const Profile = require('../../models/Profile');
 const router = express.Router();
 
+//Load Profile and User Model
+const User = require("../../models/User");
+
+//Load Validation
+const validateProfileInput = require("../../validation/profile");
+
+
 // @route   POST api/profile
 // @desc    Create or edit user profile
 // @access  Private
@@ -10,8 +17,11 @@ router.post(
   "/",
   passport.authenticate("jwt", {session:false}),
   (req, res) => {
+    const { errors, isValid } = validateProfileInput(req.body);
     //Validation
-
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
 
     //Get data
     const profileFields = {};
