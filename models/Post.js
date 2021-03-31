@@ -6,14 +6,14 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  photo: {
+  imgUrl: {
+    type: String,
+     required: true
+   },
+  /* text: {
     type: String,
     required: true
-  },
-  text: {
-    type: String,
-    required: true
-  },
+  }, */
   name: {
     type: String
   },
@@ -57,4 +57,6 @@ const PostSchema = new Schema({
 
 });
 
+
 module.exports = Post = mongoose.model('post', PostSchema);
+
