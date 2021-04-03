@@ -108,7 +108,7 @@ router.post("/login", (req, res) => {
 });
 
 // @route   POST api/users/login
-// @desc    Login the user
+// @desc    Return current user info
 // @access  Public
 router.get('/current',
   passport.authenticate('jwt', {session: false}),
