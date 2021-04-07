@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-
 // Post model
 const Post = require('../../models/Post');
 // Profile model
@@ -11,7 +10,6 @@ const Profile = require('../../models/Profile');
 
 // Validation
 const validatePostInput = require('../../validation/post');
-const { route } = require('./users');
 
 // @route   GET api/posts
 // @desc    Get posts
@@ -64,7 +62,7 @@ router.post(
 );
  
 
-// @route POST api/posts
+// @route POST api/posts/:id
 // @desc Update post
 // @access  Private
 router.post(
@@ -74,8 +72,8 @@ router.post(
     // Get fields
      const postFields = {};
      postFields.user = req.user.id;
-     if (req.body.imgUrl) postFields.imgUrl = req.body.imgUrl;
      if (req.body.caption) postFields.caption = req.body.caption;
+     if (req.body.imgUrl) postFields.imgUrl = req.body.imgUrl;
      if (req.body.name) postFields.name = req.body.name;
      if (req.body.avatar) postFields.avatar = req.body.avatar;
 
