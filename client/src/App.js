@@ -5,20 +5,24 @@ import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import store from './store';
+import { Provider } from 'react-redux';
 import './App.css'
 
 export default class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Navbar />
-          <Route exact path="/" component={ Landing } />
-          <Route exact path="/register" component={ Register } />
-          <Route exact path="/login" component={ Login } />
-          <Footer />
-        </div>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Navbar />
+            <Route exact path="/" component={ Landing } />
+            <Route exact path="/register" component={ Register } />
+            <Route exact path="/login" component={ Login } />
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
     )
   }
 }
