@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: rgb(39, 37, 37);
+}
+.title {
+  font-size: 50px;
+  color: white;
+  font-family: 'Satisfy';
+  font-weight: 550;
+}
+
+.lead {
+  font-size: 16px;
+  width: 400px;
+  color: white;
+  font-weight: 500;
+}
+
+.landing {
+  position: relative;
+  background: url('./img/woods.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -24px;
+  margin-bottom: -50px;
+}
+
+.landingBox {
+  position: absolute;
+  top: 200px;
+  right: 0;
+  left: 0;
+  width: 500px;
+  height: 520px;
+  background-color: rgba(31, 31, 31, 0.8);
+  border:rgb(58, 58, 58) solid .1px;
+  padding: 2.5em;
+  color: rgb(240, 240, 240);
+}
+
+hr {
+  border: white solid .2px;
+}
+
+.landingLogin {
+  width: 400px;
+  margin: auto;
+  padding-bottom: .5em;
+}
+
+.signupDivider {
+  padding-top: 1em;
+}

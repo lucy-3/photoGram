@@ -5,6 +5,7 @@ import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import './App.css'
 
 export default class App extends Component {
   render() {
