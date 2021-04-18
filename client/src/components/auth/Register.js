@@ -29,14 +29,20 @@ class Register extends Component {
       password2: this.state.password2
     };
 
-    this.props.registerUser(newUser);
+    this.props.registerUser(newUser, this.props.history);
 
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.erros) {
+      this.setState({errors: nextProps.errors});
+    }
   }
 
   render() {
 
-    const {errors} = this.props;
-    // const {errors} = this.state;
+    // const {errors} = this.props;
+    const {errors} = this.state;
 
     return (
       <div className="register">
