@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {Provider} from 'react-redux';
 import jwt_decode from 'jwt-decode';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
-import Login from './components/auth/Login';
+import './App.css';
 import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 import store from './store';
 import { logoutUser } from './actions/authActions';
 import setAuthToken from './utils/setAuthToken';
 import {SET_USER} from './actions/types';
-import { Provider } from 'react-redux';
+
 import './App.css'
 
 import PrivateRoute from "./components/common/PrivateRoute";
@@ -24,7 +26,6 @@ import Profile from "./components/profile/Profile";
 import NotFound from "./components/not-found/NotFound";
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
-
 if (localStorage.jwtToken){
   //decode
   const decoded = jwt_decode(localStorage.jwtToken);
@@ -83,6 +84,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/post/:id" component={Post} />
             </Switch>
+            <PrivateRoute exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>

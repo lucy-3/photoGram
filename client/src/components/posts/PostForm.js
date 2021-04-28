@@ -3,19 +3,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { addPost } from '../../actions/postActions';
+//import S3FileUpload from 'react-s3';
+//const keyS3 = require('./KeyS3');
 
 class PostForm extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       imgUrl : '',
       caption: '',
       errors: {}
-    }
+    };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    
   }
 
   componentWillReceiveProps(newProps) {
@@ -37,32 +40,39 @@ class PostForm extends Component {
   };
 
     this.props.addPost(newPost);
-    this.setState({ imgUrl : '' });
-    this.setState({ caption : '' });// need to check how to set two parameters
-
+    this.setState({ 
+      imgUrl : '' ,
+      caption : ''
+    });
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-
-
+  
   render() {
     const { errors } = this.state;
 
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">Say Something...</div>
+          <div className="card-header bg-info text-white">New Posts</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <TextAreaFieldGroup
-                  placeholder="Create a post"
-                  name="text"
-                  value={this.state.text}
+              <TextAreaFieldGroup
+                  placeholder="Add a picture url"
+                  name="imgUrl"
+                  value={this.state.imgUrl}
                   onChange={this.onChange}
-                  error={errors.text}
+                  error={errors.imgUrl}
+                />
+                <TextAreaFieldGroup
+                  placeholder="Add a caption"
+                  name="caption"
+                  value={this.state.caption}
+                  onChange={this.onChange}
+                  error={errors.caption}
                 />
               </div>
               <button type="submit" className="btn btn-dark">
@@ -75,6 +85,9 @@ class PostForm extends Component {
     );
   }
 }
+
+
+
 
 PostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
