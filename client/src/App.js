@@ -6,10 +6,16 @@ import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
+import NotFound from './components/not-found/NotFound';
 import store from './store';
 import { logoutUser } from './actions/authActions';
 import setAuthToken from './utils/setAuthToken';
 import {SET_USER} from './actions/types';
+import PrivateRoute from "./components/common/PrivateRoute";
 import { Provider } from 'react-redux';
 import './App.css'
 
@@ -75,7 +81,12 @@ class App extends Component {
                   component={EditProfile}
                 />
               </Switch>
-              <Route exact path="/not-found" component={NotFound} />
+            <Switch>
+              <PrivateRoute exact path="/feed" component={Posts} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/post/:id" component={Post} />
+            </Switch>
             </div>
             <Footer />
           </div>
