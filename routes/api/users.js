@@ -107,7 +107,7 @@ router.post("/login", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// @route   POST api/users/login
+// @route   POST api/users/current
 // @desc    Return current user info
 // @access  Public
 router.get('/current',
