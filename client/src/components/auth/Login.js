@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from "axios";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -12,7 +11,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errors: {},
+      errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
@@ -32,7 +31,7 @@ class Login extends Component {
 
     this.props.loginUser(user);
   }
-  componentDidMount(){
+  componentDidMount(nextProps){
     if(this.props.auth.isAuthenticated){
       this.props.history.push('/dashboard');
     }

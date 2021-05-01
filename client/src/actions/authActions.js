@@ -1,4 +1,4 @@
-import { SET_ERROR, SET_USER } from "./types";
+import { SET_ERRORS, SET_USER } from "./types";
 import axios from "axios";
 import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
@@ -9,7 +9,7 @@ export const registerUser = (userData, history) => dispatch => {
     .then(res => history.push('/login'))
     .catch(err => 
       dispatch({
-        type: SET_ERROR,
+        type: SET_ERRORS,
         payload: err.response.data
       }));
 }
@@ -31,9 +31,9 @@ export const loginUser = userData => dispatch => {
         payload: decoded,
       });
     })
-    .catch((err) =>
+    .catch(err =>
       dispatch({
-        type: SET_ERROR,
+        type: SET_ERRORS,
         payload: err.response.data,
       })
     );
