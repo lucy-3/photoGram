@@ -27,8 +27,38 @@ class PostItem extends Component {
     }
   }
 
+  convertBufferToBase64(buffer) {
+    //var buffer = Buffer.from(data, 'base64');
+    let binaryStr = '';
+    const byteArray = new Uint8Array(buffer);
+    for (let i = 0; i < byteArray.byteLength; i++) {
+      binaryStr += String.fromCharCode(byteArray[i]);
+    }
+    return btoa(binaryStr);
+  }
+
+  arrayBufferToBase64(buffer) {
+    var binary = '';
+    var bytes = [].slice.call(new Uint8Array(buffer));
+    bytes.forEach((b) => binary += String.fromCharCode(b));
+    return window.btoa(binary);
+};
+
   render() {
     const { post, auth, showActions } = this.props;
+    // Buffer for the jpg data
+    var buf;
+    if ( post.imgUrl && post.imgUrl.data ) {
+      //buf = this.convertBufferToBase64(post.imgUrl.data);
+      buf = this.arrayBufferToBase64(post.imgUrl.data);
+     //buf = post.imgUrl.data.toString('base64')
+     //buf = post.imgUrl.data
+    }
+    // Create an HTML img tag
+    var imageElem = document.createElement('img');
+    // Just use the toString() method from your buffer instance
+    // to get date as base64 type
+    imageElem.src = 'data:image/png;base64,' + buf; 
 
     return (
       <div className="card card-body mb-3">
@@ -44,9 +74,9 @@ class PostItem extends Component {
             <br />
             <p className="text-center">{post.name}</p>
           </div>
-          {/* need to check if this is imgUrl  */}
           <div className="col-md-10">
-            <p className="lead">{post.text}</p>  
+            <img className="rounded-circle" src={`data:image/png;base64,${buf}`} />
+            <p className="text-right">{post.caption}</p>  
             {showActions ? (
               <span>
                 <button

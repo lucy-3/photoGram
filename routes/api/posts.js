@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-
+const fs = require('fs');
 // Post model
 const Post = require('../../models/Post');
 // Profile model
@@ -46,11 +46,10 @@ router.post(
       // If any errors, send 400 with errors object
       return res.status(400).json(errors);
     }
-
     const newPost = new Post({
 
       user: req.user.id,
-      imgUrl: req.body.imgUrl,
+      imgUrl: req.body.imgUrl, 
       caption: req.body.caption,
       name: req.body.name,
       avatar: req.body.avatar

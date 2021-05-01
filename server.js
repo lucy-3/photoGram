@@ -5,15 +5,19 @@ const keys = require('./config/keys');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+//const bodyParser = require('body-parser');
 const app = express();
+
 
 //Passport config
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
 //Body-parser config
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+app.use(express.urlencoded({limit: '50mb', extended: false}));
+//app.use(bodyParser({limit: '50mb'}));
+//app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }))
+app.use(express.json({limit: '50mb'}));
 
 //Db config
 const db = keys.mongoURI;

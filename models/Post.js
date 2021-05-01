@@ -7,8 +7,8 @@ const PostSchema = new Schema({
     ref: 'users'
   },
   imgUrl: {
-    type: String,
-     required: true
+    data: Schema.Types.Buffer,
+    contentType: String
    },
   caption: {
     type: String,
