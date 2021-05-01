@@ -75,7 +75,11 @@ class PostItem extends Component {
             <p className="text-center">{post.name}</p>
           </div>
           <div className="col-md-10">
+            
+            {/* Image */}
             <img className="rounded-circle" src={`data:image/png;base64,${buf}`} />
+            console.log(`data:image/png;base64,${buf}`);
+
             <p className="text-right">{post.caption}</p>  
             {showActions ? (
               <span>
