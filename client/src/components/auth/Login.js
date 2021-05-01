@@ -50,15 +50,16 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
+      
       <div className="login">
-        <div className="container">
+        <div className="container loginBox">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Log In</h1>
-              <p className="lead text-center">
-                Sign in to your DevConnector account
-              </p>
-              <form noValidate onSubmit={this.onSubmit}>
+              <h3 className="loginTitle text-center">
+                Login to PhotoGram
+              </h3>
+              <br></br>
+              <form className="loginForm" noValidate onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <input
                     type="email"
@@ -89,7 +90,8 @@ class Login extends Component {
                     <div className="invalid-feedback">{errors.password}</div>
                   )}
                 </div>
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <br></br>
+                <input type="submit" className="btn btn-block mt-4" />
               </form>
             </div>
           </div>

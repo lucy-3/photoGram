@@ -49,14 +49,14 @@ class Register extends Component {
 
     return (
       <div className="register">
-        <div className="container">
+        <div className="container registerBox">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">
-                Create your photoGram account
-              </p>
-              <form noValidate onSubmit={this.onSubmit}>
+              <h3 className="registerTitle">
+                Create a photoGram account
+              </h3>
+              <br></br>
+              <form className="registerForm" noValidate onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <input
                     type="text"
@@ -83,7 +83,7 @@ class Register extends Component {
                     value={this.state.email}
                     onChange={this.onChange}
                   />
-                  <small className="form-text text-muted">
+                  <small className="form-text">
                     This site uses Gravatar so if you want a profile image, use
                     a Gravatar email
                   </small>
@@ -121,7 +121,8 @@ class Register extends Component {
                     <div className="invalid-feedback">{errors.password2}</div>
                   )}
                 </div>
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <br></br>
+                <input type="submit" className="btn  btn-block mt-4" />
               </form>
             </div>
           </div>

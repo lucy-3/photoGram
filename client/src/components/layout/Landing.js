@@ -93,7 +93,7 @@ class Landing extends Component {
                   {errors.password}
                 </div>
               )}
-            <input type="submit" className="btn btn-primary btn-block mt-4" value="Login"/>
+            <input type="submit" className="btn btn-block mt-4" value="Login"/>
             </div>
           </form>
 

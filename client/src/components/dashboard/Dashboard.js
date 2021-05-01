@@ -28,14 +28,15 @@ class Dashboard extends Component {
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
           <div>
-            <p className="lead text-muted">
+            <p className="dashboardText">
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
+            <br></br>
             <ProfileActions />
-            <div style={{ marginBottom: '60px' }} />
+            <div/>
             <button
               onClick={this.onDeleteClick.bind(this)}
-              className="btn btn-danger"
+              className="btn deleteBtn"
             >
               Delete My Account
             </button>
@@ -45,9 +46,11 @@ class Dashboard extends Component {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>You have not yet setup a profile, please add some info</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
+            <p className="dashboardText">Welcome {user.name}</p>
+            <br></br>
+            <p className="dashboardText">It looks like you don't have a profile setup, let's get started! </p>
+            <br></br>
+            <Link to="/create-profile" className="btn btn-lg ">
               Create Profile
             </Link>
           </div>
@@ -57,10 +60,11 @@ class Dashboard extends Component {
 
     return (
       <div className="dashboard">
-        <div className="container">
+        <div className="container dashboardBox">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
+              <h1 className="dashboardTitle">Dashboard</h1>
+              <br></br>
               {dashboardContent}
             </div>
           </div>

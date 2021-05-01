@@ -38,11 +38,27 @@
 }
 
 .navbar {
-  background-color: rgb(39, 37, 37);
+  background-color: transparent;
+  border-bottom: 0.25px solid #dadada;
+}
+
+.navbar-brand {
+  color: #000000;
+  font-family: 'Satisfy';
+}
+
+.nav-link {
+  color: #212121;
+}
+
+.footer {
+  background-color: #ffffff;
+  color: #212121;
+
 }
 .title {
   font-size: 50px;
-  color: white;
+  color: #000000;
   font-family: 'Satisfy';
   font-weight: 550;
 }
@@ -50,7 +66,7 @@
 .lead {
   font-size: 16px;
   width: 400px;
-  color: white;
+  color: #212121;
   font-weight: 500;
 }
 
@@ -70,14 +86,15 @@
   left: 0;
   width: 500px;
   height: 520px;
-  background-color: rgba(31, 31, 31, 0.8);
-  border:rgb(58, 58, 58) solid .1px;
+  background-color: #f8f8f8;
+  opacity: .9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 2.5em;
-  color: rgb(240, 240, 240);
+  color: #212121;
 }
 
 hr {
-  border: white solid .2px;
+  border: #212121 solid .2px;
 }
 
 .landingLogin {
@@ -88,4 +105,119 @@ hr {
 
 .signupDivider {
   padding-top: 1em;
+  color: #212121;
+}
+
+.App {
+  background: rgb(201,164,255);
+  background: linear-gradient(0deg, rgba(201,164,255,1) 0%, rgba(243,231,255,1) 11%, rgba(255,255,255,1) 100%);
+}
+
+.register, .login, .profiles, .dashboard, .create-profile, .profile, .feed {
+  height: 100vh;
+}
+
+.registerBox, .loginBox, .dashboardBox {
+  position: absolute;
+  top: 150px;
+  right: 0;
+  left: 0;
+  width: 800px;
+  height: 650px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 2.5em;
+  color: rgb(240, 240, 240);
+}
+
+.registerTitle, .loginTitle, .dashboardTitle {
+  color: black;
+  font-size: 36px;
+  padding-top: 20px;
+}
+
+.registerForm, .loginForm {
+  padding-top: 30px;
+}
+
+.form-control {
+  border: 0;
+  border-radius: 0;
+  background-color: #f8f8f8;
+  border-bottom: #464646 1px solid;
+  color: #212121;
+  -webkit-tap-highlight-color: #424242;
+  
+}
+
+textarea.form-control {
+  color: #212121;
+}
+
+.btn {
+  background-color: #a448ff;
+  color: white;
+}
+
+.text-info {
+  color: #a448ff !important;
+}
+
+.card {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+}
+
+.profilesName, .profilesInfo {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.rounded-circle {
+  margin: 20px;
+  width: 100px;
+}
+
+.profileCard {
+  padding: 20px;
+}
+
+.profilesTitle {
+  padding: 20px;
+  text-align: center;
+
+}
+
+.profilesSubtitle {
+  padding-bottom: 30px;
+}
+
+.deleteBtn {
+  background-color: #ff6363;
+}
+
+.dashboardText {
+  color: #212121;
+}
+
+.dashboardBox {
+  height: 400px;
+}
+
+.d-block {
+  padding: 10px;
+  font-style: italic;
+}
+
+.create-profile {
+  padding-top: 30px;
+}
+
+.aboutCard {
+  color: #212121;
+}
+
+.bioText {
+  padding-top: 20px;
+  align-content: left;
 }
