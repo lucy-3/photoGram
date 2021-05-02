@@ -37,7 +37,6 @@ class PostForm extends Component {
     };
 
     this.props.addPost(newPost);
-
     this.setState({ 
       caption: '',
       imgUrl: ''
@@ -59,8 +58,8 @@ class PostForm extends Component {
             <form onSubmit={this.onSubmit}>
               <TextFieldGroup
                 placeholder="Upload an image URL"
-                name="picture"
-                value={this.state.imgUrl}
+                name="image"
+                defaultValue={this.state.imgUrl}
                 onChange={this.onChange}
                 error={errors.imgUrl}
               />
@@ -74,11 +73,12 @@ class PostForm extends Component {
               />
 
               <div className="mb-3">
-                <button 
-                  type="submit" 
-                  className="btn btn-dark">
-                  Submit
-                </button>
+                <input
+                  type="submit"
+                  value="Submit"
+                  className="btn btn-dark"
+                />
+                {/* </button> */}
               </div>
             </form>
           </div>
