@@ -53,7 +53,7 @@ class PostForm extends Component {
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">Add a picture...</div>
+          <div className="postHeader card-header text-white">Add a picture...</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <TextFieldGroup
@@ -76,7 +76,7 @@ class PostForm extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-dark"
+                  className="btn"
                 />
                 {/* </button> */}
               </div>

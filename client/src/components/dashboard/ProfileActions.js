@@ -5,7 +5,7 @@ const ProfileActions = () => {
   return (
     <div className="btn-group mb-4" role="group">
       <Link to="/edit-profile" className="btn">
-        <i className="fas fa-user-circle text-info mr-1" /> Edit Profile
+        <i id="editIcon" className="fas fa-user-circle text-info mr-1" /> Edit Profile
       </Link>
     </div>
   );

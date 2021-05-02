@@ -164,7 +164,7 @@ textarea.form-control {
 }
 
 .text-info {
-  color: #a448ff !important;
+  color: #cda8db !important;
 }
 
 .card {
@@ -223,4 +223,8 @@ textarea.form-control {
 .bioText {
   padding-top: 20px;
   align-content: left;
+}
+
+.postHeader {
+  background-color: #a448ff;
 }
