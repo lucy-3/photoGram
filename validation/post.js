@@ -15,6 +15,10 @@ module.exports = function validatePostInput(data) {
     errors.caption = "Caption field is required";
   }
 
+  if (isEmpty(data.imgUrl)) {
+    errors.imgUrl= "Image URL is required";
+  }
+
   return {
     errors,
     isValid: isEmpty(errors),
