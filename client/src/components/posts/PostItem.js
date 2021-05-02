@@ -27,39 +27,9 @@ class PostItem extends Component {
     }
   }
 
-  convertBufferToBase64(buffer) {
-    //var buffer = Buffer.from(data, 'base64');
-    let binaryStr = '';
-    const byteArray = new Uint8Array(buffer);
-    for (let i = 0; i < byteArray.byteLength; i++) {
-      binaryStr += String.fromCharCode(byteArray[i]);
-    }
-    return btoa(binaryStr);
-  }
-
-  arrayBufferToBase64(buffer) {
-    var binary = '';
-    var bytes = [].slice.call(new Uint8Array(buffer));
-    bytes.forEach((b) => binary += String.fromCharCode(b));
-    return window.btoa(binary);
-};
-
   render() {
     const { post, auth, showActions } = this.props;
-    // Buffer for the jpg data
-    var buf;
-    if ( post.imgUrl && post.imgUrl.data ) {
-      //buf = this.convertBufferToBase64(post.imgUrl.data);
-      buf = this.arrayBufferToBase64(post.imgUrl.data);
-     //buf = post.imgUrl.data.toString('base64')
-     //buf = post.imgUrl.data
-    }
-    // Create an HTML img tag
-    var imageElem = document.createElement('img');
-    // Just use the toString() method from your buffer instance
-    // to get date as base64 type
-    imageElem.src = 'data:image/png;base64,' + buf; 
-
+    
     return (
       <div className="card card-body mb-3">
         <div className="row">
@@ -74,12 +44,20 @@ class PostItem extends Component {
             <br />
             <p className="text-center">{post.name}</p>
           </div>
+
           <div className="col-md-10">
             
             {/* Image */}
-            <img className="rounded-circle" src={`data:image/png;base64,${buf}`} />
-            console.log(`data:image/png;base64,${buf}`);
-
+            {/* <a href={post.imgUrl}></a> */}
+            <p>Go to image here: 
+              <a
+                className="text-black p-2"
+                href={post.imgUrl}
+                target="_blank"
+              >
+                {post.imgUrl}
+              </a>
+            </p>
             <p className="text-right">{post.caption}</p>  
             {showActions ? (
               <span>
@@ -95,6 +73,7 @@ class PostItem extends Component {
                   />
                   <span className="badge badge-light">{post.likes.length}</span>
                 </button>
+
                 <button
                   onClick={this.onUnlikeClick.bind(this, post._id)}
                   type="button"
@@ -102,9 +81,11 @@ class PostItem extends Component {
                 >
                   <i className="text-secondary fas fa-thumbs-down" />
                 </button>
+
                 <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
                   Comments
                 </Link>
+            
                 {post.user === auth.user.id ? (
                   <button
                     onClick={this.onDeleteClick.bind(this, post._id)}
