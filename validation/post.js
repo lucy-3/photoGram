@@ -8,11 +8,11 @@ module.exports = function validatePostInput(data) {
 
 
   if (!Validator.isLength(data.caption, { max: 300 })) {
-    errors.text = "Post must be less 10 and 300 characters";
+    errors.caption = "Post must be less than 300 characters";
   }
 
   if (isEmpty(data.caption)) {
-    errors.text = "Caption field is required";
+    errors.caption = "Caption field is required";
   }
 
   return {
