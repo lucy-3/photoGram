@@ -26,7 +26,7 @@ class CommentItem extends Component {
             <p className="text-center">{comment.name}</p>
           </div>
           <div className="col-md-10">
-            <p className="lead">{comment.text}</p>
+            <p className="text-left">{comment.text}</p>
             {comment.user === auth.user.id ? (
               <button
                 onClick={this.onDeleteClick.bind(this, postId, comment._id)}

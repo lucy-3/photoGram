@@ -10,6 +10,8 @@ const Profile = require('../../models/Profile');
 
 // Validation
 const validatePostInput = require('../../validation/post');
+const validateCommentInput = require('../../validation/postComment');
+
 // @route   GET api/posts
 // @desc    Get posts
 // @access  Public
@@ -155,7 +157,7 @@ router.post(
   '/comment/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const { errors, isValid } = validatePostInput(req.body);
+    const { errors, isValid } = validateCommentInput(req.body);
 
     // Check Validation
     if (!isValid) {
