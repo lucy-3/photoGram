@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
 }
 
 .App-logo {
@@ -42,6 +47,11 @@
   border-bottom: 0.25px solid #dadada;
 }
 
+ul {
+  vertical-align: top;
+}
+
+
 .navbar-brand {
   color: #000000;
   font-family: 'Satisfy';
@@ -80,6 +90,7 @@
 }
 
 .landingBox {
+  text-align: center;
   position: absolute;
   top: 200px;
   right: 0;
@@ -113,11 +124,16 @@ hr {
   background: linear-gradient(0deg, rgba(201,164,255,1) 0%, rgba(243,231,255,1) 11%, rgba(255,255,255,1) 100%);
 }
 
-.register, .login, .profiles, .dashboard, .create-profile, .profile, .feed {
+.register, .login, .profiles, .dashboard, .create-profile, .profile {
   height: 100vh;
 }
 
+.post, .feed {
+  height: auto;
+}
+
 .registerBox, .loginBox, .dashboardBox {
+  text-align: center;
   position: absolute;
   top: 150px;
   right: 0;
@@ -225,6 +241,30 @@ textarea.form-control {
   align-content: left;
 }
 
-.postHeader {
+.postHeader, .card-header {
   background-color: #a448ff;
+  font-weight: 500;
+
+}
+
+.imgLink {
+  margin-top: 20px;
+  text-decoration: underline;
+  font-size: 20px;
+  align-content: left;
+}
+
+.captionText {
+  align-content: left;
+}
+
+.backToFeed {
+  align-content: left;
+  text-align: left;
+}
+
+.userIcon {
+  border-radius: 5px;
+  margin-left: 10px;
+
 }

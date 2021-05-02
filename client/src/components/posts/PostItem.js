@@ -49,22 +49,22 @@ class PostItem extends Component {
             
             {/* Image */}
             {/* <a href={post.imgUrl}></a> */}
-            <p>Go to image here: 
+            <p className="imgLink">
               <a
-                className="text-black p-2"
+                className="text-black"
                 href={post.imgUrl}
                 target="_blank"
               >
-                {post.imgUrl}
+              View Image
               </a>
             </p>
-            <p className="text-right">{post.caption}</p>  
+            <p className="captionText">{post.caption}</p>  
             {showActions ? (
               <span>
                 <button
                   onClick={this.onLikeClick.bind(this, post._id)}
                   type="button"
-                  className="btn btn-light mr-1"
+                  className="btn mr-1"
                 >
                   <i
                     className={classnames('fas fa-thumbs-up', {
@@ -77,12 +77,12 @@ class PostItem extends Component {
                 <button
                   onClick={this.onUnlikeClick.bind(this, post._id)}
                   type="button"
-                  className="btn btn-light mr-1"
+                  className="btn mr-1"
                 >
                   <i className="text-secondary fas fa-thumbs-down" />
                 </button>
 
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
+                <Link to={`/post/${post._id}`} className="btn mr-1">
                   Comments
                 </Link>
             
@@ -90,7 +90,7 @@ class PostItem extends Component {
                   <button
                     onClick={this.onDeleteClick.bind(this, post._id)}
                     type="button"
-                    className="btn btn-danger mr-1"
+                    className="btn btn-danger mr-1 deleteBtn"
                   >
                     <i className="fas fa-times" />
                   </button>

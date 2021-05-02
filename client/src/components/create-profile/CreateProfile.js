@@ -95,10 +95,11 @@ class CreateProfile extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Create Your Profile</h1>
-              <p className="lead text-center">
+              <p className="text-center">
                 Let's get some information to make your profile stand out
               </p>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3 text-center">* = required fields</small>
+              <br></br>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
@@ -125,7 +126,7 @@ class CreateProfile extends Component {
                   info="Tell us a little about yourself"
                 />
 
-                <div className="mb-3">
+                <div className="mb-3 text-center">
                   <button
                     type="button"
                     onClick={() => {
@@ -137,9 +138,11 @@ class CreateProfile extends Component {
                   >
                     Add Social Network Links
                   </button>
-                  <span className="text-muted">Optional</span>
+                  <br></br>
+                  <small>Optional</small>
                 </div>
                 {socialInputs}
+                <br></br>
                 <input
                   type="submit"
                   value="Submit"
