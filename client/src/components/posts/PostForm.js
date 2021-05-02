@@ -58,7 +58,7 @@ class PostForm extends Component {
             <form onSubmit={this.onSubmit}>
               <TextFieldGroup
                 placeholder="Upload an image URL"
-                name="image"
+                name="imgUrl"
                 value={this.state.imgUrl}
                 onChange={this.onChange}
                 error={errors.imgUrl}
