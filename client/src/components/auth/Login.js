@@ -55,7 +55,7 @@ class Login extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <h3 className="loginTitle text-center">
-                Login to PhotoGram
+                Login to photoGram
               </h3>
               <br></br>
               <form className="loginForm" noValidate onSubmit={this.onSubmit}>
