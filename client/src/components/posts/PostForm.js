@@ -59,7 +59,7 @@ class PostForm extends Component {
               <TextFieldGroup
                 placeholder="Upload an image URL"
                 name="image"
-                defaultValue={this.state.imgUrl}
+                value={this.state.imgUrl}
                 onChange={this.onChange}
                 error={errors.imgUrl}
               />
